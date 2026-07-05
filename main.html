@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Explorer</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+</head>
+<body>
+
+<header>
+  <div class="container topbar">
+    <h1>🌍 Country Explorer</h1>
+
+    <button id="logoutBtn" class="primary-btn">
+      Logout
+    </button>
+  </div>
+  <a href="favorites.html">
+  <button id="favoritesPageBtn">
+    Favorites
+  </button>
+</a>
+</header>
+
+<div class="container">
+
+  <section class="controls">
+    <input type="text" id="searchInput" placeholder="Search countries...">
+
+    <select id="regionFilter">
+      <option value="">All Regions</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">Americas</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+    </select>
+
+    <select id="sortSelect">
+      <option value="name">Sort by Name</option>
+      <option value="population">Sort by Population</option>
+      <option value="area">Sort by Area</option>
+    </select>
+  </section>
+
+  <main>
+    <section id="countriesContainer"></section>
+
+    <section id="detailsPanel">
+      <h2>Country Details</h2>
+
+      <div id="detailsContent">
+        Select a country.
+      </div>
+
+      <div id="map"></div>
+    </section>
+  </main>
+
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
